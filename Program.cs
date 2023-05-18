@@ -2,44 +2,39 @@ internal class Program
     {
     private static void Main ( string[] args )
         {
+        Console.WriteLine("\n---IPBSES.com---\nSimple Calculator in C# Console\n");
+        string operation; 
+
+        Console.Write("First Number: ");
+        double a = double.Parse(Console.ReadLine());
+        Console.Write("Second Number: ");
+        double b = double.Parse(Console.ReadLine());
+
+        while (true)
             {
-            Console.WriteLine("\n---IPBSES.com---\nSimple Calculator in C# Console\n");
             Console.Write("Please Identify your operator(+ (sum), - (subtract), x (multiply), / (divide)) or 0 to Exit:  ");
-            string operation = Console.ReadLine();
-            if (!operation.Equals("0"))
+            operation = Console.ReadLine();
+
+            switch (operation)
                 {
-                if (operation.Equals("+") || operation.Equals("-") || operation.Equals("x") || operation.Equals("/"))
-                    {
-                    Console.Write("First Number: ");
-                    double a = double.Parse(Console.ReadLine());
-                    Console.Write("Second Number: ");
-                    double b = double.Parse(Console.ReadLine());
-
-                    switch (operation)
-                        {
-                        case "+":
-                            Console.WriteLine("Sum is: " + Sum(a, b));
-                            break;
-                        case "-":
-                            Console.WriteLine("Subtract is: " + Subtract(a, b));
-                            break;
-                        case "x":
-                            Console.WriteLine("Multiplication is: " + Multiply(a, b));
-                            break;
-                        case "/":
-                            Console.WriteLine("Division is: " + Divide(a, b));
-                            break;
-                        }
-                    }
-                else
-                    {
-                    Console.WriteLine("\nPlease only type operators(+ (sum), - (subtract), x (multiply), / (divide)) or 0 to Exit ");
-
-                    }
+                case "+":
+                    Console.WriteLine("Sum is: " + Sum(a, b));
+                    break;
+                case "-":
+                    Console.WriteLine("Subtract is: " + Subtract(a, b));
+                    break;
+                case "x":
+                    Console.WriteLine("Multiplication is: " + Multiply(a, b));
+                    break;
+                case "/":
+                    Console.WriteLine("Division is: " + Divide(a, b));
+                    break;
+                case "0":
+                    return;
                 }
 
-
             }
+
         Console.ReadKey();
 
         }
